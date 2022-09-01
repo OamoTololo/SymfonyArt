@@ -2,12 +2,13 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\AnnotationRoute;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Bundle\FrameworkExtraBundle\Configuration\Method;
 
-class ArticleController
+class ArticleController extends controller
 {
     /**
      * @Route("/")
@@ -15,6 +16,8 @@ class ArticleController
      */
     public  function home()
     {
-        return new Response('<html><body>Hello</body></html>');
+       // return new Response('<html><body>Hello</body></html>');
+
+        return $this->render('articles/home.html.twig');
     }
 }
